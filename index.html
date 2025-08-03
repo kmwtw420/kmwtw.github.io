@@ -3,81 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KMWTW Kraków - Galeria Sztuki</title>
+    <title>Galeria Sztuki KMWTW - Kraków</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #e94560;
-            --light: #f1f1f1;
-            --gold: #d4af37;
-            --transition: all 0.3s ease;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #f5f5f5;
+            --accent: #d4af37;
+            --text: #333;
+            --light: #fff;
         }
 
         body {
-            font-family: 'Raleway', sans-serif;
-            background-color: #0f0f1b;
-            color: var(--light);
+            background-color: var(--secondary);
+            color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
         }
 
         /* Header Styles */
         header {
-            background-color: rgba(10, 10, 20, 0.95);
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1rem 5%;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo h1 {
             font-size: 1.8rem;
-            color: var(--light);
-            margin-left: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .logo span {
             color: var(--accent);
-        }
-
-        .logo-icon {
-            font-size: 2rem;
-            color: var(--gold);
         }
 
         nav ul {
@@ -86,122 +63,108 @@
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin-left: 2rem;
         }
 
         nav ul li a {
             color: var(--light);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
-            transition: var(--transition);
+            transition: color 0.3s;
             position: relative;
-            padding: 5px 0;
         }
 
         nav ul li a:hover {
-            color: var(--gold);
+            color: var(--accent);
         }
 
         nav ul li a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background-color: var(--gold);
-            transition: var(--transition);
+            background-color: var(--accent);
+            transition: width 0.3s;
         }
 
         nav ul li a:hover::after {
             width: 100%;
         }
 
-        .hamburger {
+        .mobile-menu-btn {
             display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(10, 10, 20, 0.7), rgba(10, 10, 20, 0.9)), url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x1080/1a1a1a/ffffff?text=Galeria+KMWTW') no-repeat center center/cover;
             display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            padding-top: 80px;
+            color: var(--light);
+            padding: 0 2rem;
         }
 
         .hero-content {
             max-width: 800px;
-            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
         .btn {
             display: inline-block;
-            background: var(--accent);
-            color: white;
+            background-color: var(--accent);
+            color: var(--primary);
             padding: 12px 30px;
-            border-radius: 30px;
             text-decoration: none;
+            border-radius: 0;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: var(--transition);
+            transition: all 0.3s;
             border: 2px solid var(--accent);
         }
 
         .btn:hover {
-            background: transparent;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--gold);
-            margin-left: 15px;
-        }
-
-        .btn-outline:hover {
-            background: var(--gold);
-            color: var(--primary);
+            background-color: transparent;
+            color: var(--accent);
         }
 
         /* Section Styles */
         section {
-            padding: 100px 0;
+            padding: 5rem 5%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
             font-size: 2.5rem;
+            color: var(--primary);
             position: relative;
             display: inline-block;
-            padding-bottom: 15px;
+            padding-bottom: 1rem;
         }
 
         .section-title h2::after {
@@ -212,14 +175,16 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: var(--gold);
+            background-color: var(--accent);
         }
 
         /* About Section */
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .about-text {
@@ -227,392 +192,380 @@
         }
 
         .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
         .about-image {
             flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 10px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
-            transition: var(--transition);
-        }
-
-        .about-image img:hover {
-            transform: scale(1.05);
         }
 
         /* Exhibitions Section */
-        .exhibitions {
-            background: rgba(20, 20, 35, 0.7);
-        }
-
-        .exhibition-grid {
+        .exhibitions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .exhibition-card {
-            background: var(--secondary);
-            border-radius: 10px;
+            background: var(--light);
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
         .exhibition-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .exhibition-img {
+        .card-image {
             height: 250px;
             overflow: hidden;
         }
 
-        .exhibition-img img {
+        .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 0.5s;
         }
 
-        .exhibition-card:hover .exhibition-img img {
+        .exhibition-card:hover .card-image img {
             transform: scale(1.1);
         }
 
-        .exhibition-info {
-            padding: 20px;
+        .card-content {
+            padding: 1.5rem;
         }
 
-        .exhibition-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--gold);
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
         }
 
-        .exhibition-info .date {
+        .card-content .date {
             color: var(--accent);
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
             display: block;
         }
 
         /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .project-card {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 300px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: var(--transition);
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(26, 26, 46, 0.85);
+        .project-item {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            margin-bottom: 4rem;
             align-items: center;
-            opacity: 0;
-            transition: var(--transition);
-            padding: 20px;
-            text-align: center;
+            gap: 2rem;
         }
 
-        .project-card:hover .project-overlay {
-            opacity: 1;
+        .project-item:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .project-card:hover .project-img {
-            transform: scale(1.1);
+        .project-image {
+            flex: 1;
+            border: 5px solid var(--accent);
         }
 
-        .project-overlay h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--gold);
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .project-info p {
+            margin-bottom: 1.5rem;
         }
 
         /* Artists Section */
-        .artists {
-            background: rgba(20, 20, 35, 0.7);
-        }
-
         .artists-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .artist-card {
-            background: var(--secondary);
-            border-radius: 10px;
-            overflow: hidden;
+            background: var(--light);
             text-align: center;
-            padding: 30px 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
         }
 
         .artist-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
-        .artist-img {
+        .artist-image {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            margin: 0 auto 20px;
             overflow: hidden;
-            border: 3px solid var(--gold);
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--accent);
         }
 
-        .artist-img img {
+        .artist-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
         .artist-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
         }
 
-        .artist-card .specialization {
+        .artist-card .role {
             color: var(--accent);
-            font-style: italic;
-            margin-bottom: 15px;
+            font-weight: 600;
+            margin-bottom: 1rem;
             display: block;
         }
 
         /* Contact Section */
         .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
+            display: flex;
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            flex: 1;
         }
 
         .contact-info h3 {
             font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--gold);
+            margin-bottom: 1.5rem;
+            color: var(--primary);
         }
 
         .contact-details {
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
         }
 
-        .contact-item {
-            display: flex;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--secondary);
-            border-radius: 50%;
+        .contact-details p {
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 1.2rem;
-            color: var(--gold);
         }
 
-        .contact-text h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+        .contact-details i {
+            margin-right: 1rem;
+            color: var(--accent);
+            width: 20px;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
         }
 
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--secondary);
+        .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
             color: var(--light);
-            font-size: 1.2rem;
-            transition: var(--transition);
+            border-radius: 50%;
+            transition: all 0.3s;
         }
 
-        .social-link:hover {
-            background: var(--gold);
-            transform: translateY(-5px);
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
         }
 
-        .contact-form .form-group {
-            margin-bottom: 20px;
+        .contact-form {
+            flex: 1;
         }
 
-        .contact-form input,
-        .contact-form textarea {
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            color: var(--light);
-            font-family: 'Raleway', sans-serif;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 0;
             font-size: 1rem;
         }
 
-        .contact-form textarea {
+        .form-group textarea {
             height: 150px;
             resize: vertical;
         }
 
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.15);
-        }
-
         /* Footer */
         footer {
-            background: var(--primary);
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 30px;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
+            background-color: var(--primary);
             color: var(--light);
-            margin: 0 15px;
-            text-decoration: none;
-            transition: var(--transition);
+            padding: 3rem 5% 1.5rem;
         }
 
-        .footer-links a:hover {
-            color: var(--gold);
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
         }
 
         .copyright {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #bbb;
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
         }
 
         /* Responsive Design */
         @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .about-content {
+            .about-content,
+            .contact-container,
+            .project-item {
                 flex-direction: column;
+            }
+
+            .project-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
             }
         }
 
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-                font-size: 1.5rem;
-                color: var(--light);
-            }
-            
             nav ul {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--primary);
+                height: calc(100vh - 70px);
+                background-color: var(--primary);
                 flex-direction: column;
                 align-items: center;
-                padding-top: 50px;
-                transition: var(--transition);
+                padding-top: 2rem;
+                transition: left 0.3s;
             }
-            
+
             nav ul.active {
                 left: 0;
             }
-            
+
             nav ul li {
-                margin: 20px 0;
+                margin: 1.5rem 0;
             }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .btn {
+
+            .mobile-menu-btn {
                 display: block;
-                margin: 15px auto;
-                width: 80%;
-                max-width: 250px;
             }
-            
-            .btn-outline {
-                margin-left: 0;
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
 
         @media (max-width: 576px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
-            
-            .section-title h2 {
-                font-size: 2rem;
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 3rem 5%;
             }
         }
     </style>
@@ -620,17 +573,14 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-palette logo-icon"></i>
-                <h1>KMWTW <span>Kraków</span></h1>
-            </div>
-            <div class="hamburger">
+        <div class="header-container">
+            <div class="logo">KMWTW <span>Galeria</span></div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
             <nav>
-                <ul>
-                    <li><a href="#home">Strona Główna</a></li>
+                <ul id="navMenu">
+                    <li><a href="#home">Strona główna</a></li>
                     <li><a href="#exhibitions">Wystawy</a></li>
                     <li><a href="#projects">Projekty</a></li>
                     <li><a href="#artists">Artyści</a></li>
@@ -641,269 +591,231 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <h1>Galeryja Sztuki <span>KMWTW</span> w Krakowie</h1>
-            <p>Odkryj świat współczesnej sztuki w sercu starego miasta Krakowa. Zapraszamy do eksploracji naszych wystaw i projektów artystycznych.</p>
-            <div class="hero-btns">
-                <a href="#exhibitions" class="btn">Aktualne wystawy</a>
-                <a href="#contact" class="btn btn-outline">Kontakt</a>
-            </div>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Galeria Sztuki KMWTW</h1>
+            <p>Przestrzeń dla nowoczesnej sztuki w sercu Krakowa. Promujemy najnowsze zjawiska w sztukach wizualnych.</p>
+            <a href="#exhibitions" class="btn">Zobacz wystawy</a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>O Galerii</h2>
+    <section class="about">
+        <div class="section-title">
+            <h2>O Galerii</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Galeria Sztuki KMWTW</h3>
+                <p>Działalność naszej galerii koncentruje się na mapowaniu i promowaniu najnowszych zjawisk w sztukach wizualnych, ze szczególnym uwzględnieniem krakowskiej sceny artystycznej.</p>
+                <p>Jesteśmy przestrzenią nie tylko wystawienniczą, ale również miejscem refleksji teoretycznej na temat sztuki, a także społeczności, wspólnoty i środowiska.</p>
+                <p>Wykorzystując nasze wieloletnie doświadczenie w zakresie promocji sztuki, animacji wydarzeń artystycznych i działań edukacyjnych, tworzymy przestrzeń, która stała się ważnym i stałym punktem na kulturalnej mapie Krakowa.</p>
+                <a href="#contact" class="btn">Skontaktuj się z nami</a>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>KMWTW Kraków</h3>
-                    <p>Galeryja KMWTW to przestrzeń kulturalna położona w sercu Krakowa, dedykowana promocji współczesnej sztuki polskiej i międzynarodowej. Od 2005 roku organizujemy wystawy, projekty edukacyjne oraz wydarzenia kulturalne, które łączą tradycję z nowoczesnością.</p>
-                    <p>Nasza misja to wspieranie artystów i umożliwienie społeczeństwu dostępu do wartościowych form wyrazu artystycznego. Współpracujemy z czołowymi galeriami, muzeami i instytucjami kultury w Polsce i za granicą.</p>
-                    <p>Zapraszamy do odwiedzenia naszej galerii i uczestnictwa w organizowanych przez nas wydarzeniach.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Galeria KMWTW">
-                </div>
+            <div class="about-image">
+                <img src="https://placehold.co/600x400/1a1a1a/ffffff?text=Galeria+KMWTW" alt="Galeria KMWTW">
             </div>
         </div>
     </section>
 
     <!-- Exhibitions Section -->
-    <section id="exhibitions" class="exhibitions">
-        <div class="container">
-            <div class="section-title">
-                <h2>Aktualne Wystawy</h2>
+    <section class="exhibitions" id="exhibitions">
+        <div class="section-title">
+            <h2>Aktualne Wystawy</h2>
+        </div>
+        <div class="exhibitions-grid">
+            <div class="exhibition-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/400x300/d4af37/ffffff?text=Wystawa+1" alt="Wystawa 1">
+                </div>
+                <div class="card-content">
+                    <h3>Formy i Przestrzenie</h3>
+                    <span class="date">15.06.2023 - 30.09.2023</span>
+                    <p>Eksploracja relacji między formą a przestrzenią w kontekście współczesnej rzeźby.</p>
+                </div>
             </div>
-            <div class="exhibition-grid">
-                <div class="exhibition-card">
-                    <div class="exhibition-img">
-                        <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Wystawa 1">
-                    </div>
-                    <div class="exhibition-info">
-                        <h3>Abstrakcja i Rzeczywistość</h3>
-                        <span class="date">15.06.2023 - 30.09.2023</span>
-                        <p>Grupa artystów eksploruje granice między abstrakcją a realistycznym przedstawieniem w malarstwie współczesnej.</p>
-                    </div>
+            <div class="exhibition-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/400x300/1a1a1a/ffffff?text=Wystawa+2" alt="Wystawa 2">
                 </div>
-                <div class="exhibition-card">
-                    <div class="exhibition-img">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1645&q=80" alt="Wystawa 2">
-                    </div>
-                    <div class="exhibition-info">
-                        <h3>Dialog Z Przestrzenią</h3>
-                        <span class="date">01.07.2023 - 15.10.2023</span>
-                        <p>Instalacje przestrzenne i rzeźby badające relację człowieka z otaczającym go środowiskiem.</p>
-                    </div>
+                <div class="card-content">
+                    <h3>Krakowski Manifest</h3>
+                    <span class="date">01.07.2023 - 15.10.2023</span>
+                    <p>Grupa młodych artystów z Krakowa prezentuje swoje nowe prace.</p>
                 </div>
-                <div class="exhibition-card">
-                    <div class="exhibition-img">
-                        <img src="https://images.unsplash.com/photo-1543857778-c4a1a569e7bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Wystawa 3">
-                    </div>
-                    <div class="exhibition-info">
-                        <h3>Nowe Media</h3>
-                        <span class="date">10.08.2023 - 30.11.2023</span>
-                        <p>Eksperymenty z cyfrową sztuką interaktywną i sztuczną inteligencją w kontekście artystycznym.</p>
-                    </div>
+            </div>
+            <div class="exhibition-card">
+                <div class="card-image">
+                    <img src="https://placehold.co/400x300/333333/ffffff?text=Wystawa+3" alt="Wystawa 3">
+                </div>
+                <div class="card-content">
+                    <h3>Granice Medium</h3>
+                    <span class="date">10.08.2023 - 25.11.2023</span>
+                    <p>Interdyscyplinarne podejście do tradycyjnych technik artystycznych.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nasze Projekty</h2>
+    <section class="projects" id="projects">
+        <div class="section-title">
+            <h2>Nasze Projekty</h2>
+        </div>
+        <div class="projects-container">
+            <div class="project-item">
+                <div class="project-image">
+                    <img src="https://placehold.co/500x350/d4af37/ffffff?text=Projekt+1" alt="Projekt 1">
+                </div>
+                <div class="project-info">
+                    <h3>Program Rezydencyjny</h3>
+                    <p>Program rezydencyjny, w ramach którego do udziału w długoterminowych projektach zapraszani są uczestnicy spoza Krakowa (także z zagranicy).</p>
+                    <p>Projekt ma na celu integrację lokalnej i międzynarodowej społeczności artystycznej.</p>
+                    <a href="#" class="btn">Dowiedz się więcej</a>
+                </div>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');"></div>
-                    <div class="project-overlay">
-                        <h3>Artystyczna Rezydencja</h3>
-                        <p>Miesięczny program dla artystów z całego świata</p>
-                    </div>
+            <div class="project-item">
+                <div class="project-image">
+                    <img src="https://placehold.co/500x350/1a1a1a/ffffff?text=Projekt+2" alt="Projekt 2">
                 </div>
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80');"></div>
-                    <div class="project-overlay">
-                        <h3>Edukacja Artystyczna</h3>
-                        <p>Warsztaty i wykłady dla dzieci i dorosłych</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');"></div>
-                    <div class="project-overlay">
-                        <h3>Współprace Międzynarodowe</h3>
-                        <p>Projekty z galeriami i muzeami w Europie</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');"></div>
-                    <div class="project-overlay">
-                        <h3>Publikacje</h3>
-                        <p>Katalogi wystaw i monografie artystów</p>
-                    </div>
+                <div class="project-info">
+                    <h3>Działalność Edukacyjna</h3>
+                    <p>Organizujemy warsztaty, spotkania i wykłady z uczestnictwem artystów, teoretyków sztuki i krytyków.</p>
+                    <p>Nasze działania edukacyjne mają na celu rozwijanie świadomości artystycznej i kulturalnej.</p>
+                    <a href="#" class="btn">Dowiedz się więcej</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Artists Section -->
-    <section id="artists" class="artists">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nasi Artyści</h2>
+    <section class="artists" id="artists">
+        <div class="section-title">
+            <h2>Nasi Artyści</h2>
+        </div>
+        <div class="artists-grid">
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="https://placehold.co/200x200/1a1a1a/ffffff?text=Artysta+1" alt="Artysta 1">
+                </div>
+                <h3>Anna Kowalska</h3>
+                <span class="role">Malarstwo</span>
+                <p>Specjalizuje się w abstrakcyjnym malarstwie z elementami konceptualnymi.</p>
             </div>
-            <div class="artists-grid">
-                <div class="artist-card">
-                    <div class="artist-img">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1575&q=80" alt="Artysta 1">
-                    </div>
-                    <h3>Jan Kowalski</h3>
-                    <span class="specialization">Malarstwo abstrakcyjne</span>
-                    <p>Laureat wielu międzynarodowych konkursów plastycznych. Jego prace znajdują się w kolekcjach muzeów w Polsce i za granicą.</p>
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="https://placehold.co/200x200/333333/ffffff?text=Artysta+2" alt="Artysta 2">
                 </div>
-                <div class="artist-card">
-                    <div class="artist-img">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1576&q=80" alt="Artystka 1">
-                    </div>
-                    <h3>Anna Nowak</h3>
-                    <span class="specialization">Rzeźba i instalacje</span>
-                    <p>Twórczyni monumentalnych instalacji przestrzennych, które badają relację człowieka z naturą.</p>
+                <h3>Marcin Nowak</h3>
+                <span class="role">Rzeźba</span>
+                <p>Tworzy monumentalne instalacje z odzyskanych materiałów.</p>
+            </div>
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="https://placehold.co/200x200/d4af37/ffffff?text=Artysta+3" alt="Artysta 3">
                 </div>
-                <div class="artist-card">
-                    <div class="artist-img">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1572&q=80" alt="Artysta 2">
-                    </div>
-                    <h3>Piotr Wiśniewski</h3>
-                    <span class="specialization">Fotografia konceptualna</span>
-                    <p>Jego prace łączą elementy dokumentalne z fantastyką, tworząc unikalne narracje wizualne.</p>
+                <h3>Katarzyna Wiśniewska</h3>
+                <span class="role">Fotografia</span>
+                <p>Zajmuje się dokumentalną fotografią społeczną i środowiskową.</p>
+            </div>
+            <div class="artist-card">
+                <div class="artist-image">
+                    <img src="https://placehold.co/200x200/555555/ffffff?text=Artysta+4" alt="Artysta 4">
                 </div>
-                <div class="artist-card">
-                    <div class="artist-img">
-                        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1564&q=80" alt="Artystka 2">
-                    </div>
-                    <h3>Katarzyna Zielińska</h3>
-                    <span class="specialization">Sztuka multimediów</span>
-                    <p>Pionierka cyfrowej sztuki interaktywnej w Polsce. Jej prace zostały zaprezentowane na festiwalach po całym świecie.</p>
-                </div>
+                <h3>Piotr Zieliński</h3>
+                <span class="role">Multimedia</span>
+                <p>Tworzy interaktywne instalacje łączące sztukę z technologią.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Kontakt</h2>
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Kontakt</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Skontaktuj się z nami</h3>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> ul. Sztuki 15, 30-001 Kraków</p>
+                    <p><i class="fas fa-phone"></i> +48 12 345 67 89</p>
+                    <p><i class="fas fa-envelope"></i> info@galeriakmwtw.pl</p>
+                    <p><i class="fas fa-clock"></i> Wtorek - Sobota: 11:00 - 19:00</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Zapraszamy do odwiedzin</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Adres</h4>
-                                <p>ul. Sztuki 15, 31-001 Kraków</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Telefon</h4>
-                                <p>+48 12 345 67 89</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>info@kmwtw.pl</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Godziny otwarcia</h4>
-                                <p>Wtorek - Sobota: 10:00 - 18:00</p>
-                                <p>Niedziela: 11:00 - 17:00</p>
-                            </div>
-                        </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Imię i nazwisko</label>
+                        <input type="text" id="name" required>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Imię i nazwisko" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Adres email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Temat wiadomości">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Twoja wiadomość" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Wyślij wiadomość</button>
-                    </form>
-                </div>
+                    <div class="form-group">
+                        <label for="subject">Temat</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Wiadomość</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Wyślij wiadomość</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-palette"></i>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Strona Główna</a>
-                    <a href="#exhibitions">Wystawy</a>
-                    <a href="#projects">Projekty</a>
-                    <a href="#artists">Artyści</a>
-                    <a href="#contact">Kontakt</a>
-                </div>
-                <p>© 2023 Galeryja Sztuki KMWTW Kraków. Wszelkie prawa zastrzeżone.</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Galeria KMWTW</h4>
+                <p>Przestrzeń dla nowoczesnej sztuki w sercu Krakowa. Promujemy najnowsze zjawiska w sztukach wizualnych.</p>
             </div>
-            <div class="copyright">
-                <p>Projekt i realizacja: KMWTW Kraków</p>
+            <div class="footer-col">
+                <h4>Linki</h4>
+                <ul>
+                    <li><a href="#home">Strona główna</a></li>
+                    <li><a href="#exhibitions">Wystawy</a></li>
+                    <li><a href="#projects">Projekty</a></li>
+                    <li><a href="#artists">Artyści</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
             </div>
+            <div class="footer-col">
+                <h4>Otwarcie</h4>
+                <ul>
+                    <li>Poniedziałek: Zamknięte</li>
+                    <li>Wtorek - Piątek: 11:00 - 18:00</li>
+                    <li>Sobota: 11:00 - 19:00</li>
+                    <li>Niedziela: 12:00 - 17:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Galeria Sztuki KMWTW. Wszelkie prawa zastrzeżone.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('nav ul');
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
 
-        hamburger.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
 
         // Close mobile menu when clicking on a link
-        document.querySelectorAll('nav ul li a').forEach(link => {
+        document.querySelectorAll('#navMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
             });
@@ -914,25 +826,38 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
                     window.scrollTo({
-                        top: target.offsetTop - 80,
+                        top: targetElement.offsetTop - 70,
                         behavior: 'smooth'
                     });
                 }
             });
         });
 
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if(contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
+                contactForm.reset();
+            });
+        }
+
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
-                header.style.background = 'rgba(10, 10, 20, 0.98)';
+            if(window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
             } else {
-                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.3)';
-                header.style.background = 'rgba(10, 10, 20, 0.95)';
+                header.style.backgroundColor = 'var(--primary)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             }
         });
     </script>
